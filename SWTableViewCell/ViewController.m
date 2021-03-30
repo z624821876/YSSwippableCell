@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "SWTableViewCell.h"
 #import "UMTableViewCell.h"
+#import "YSCollectionViewController.h"
 
 @interface ViewController () {
     NSArray *_sections;
@@ -76,6 +77,11 @@
     if (!tableView.isEditing) {
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
+    
+    YSCollectionViewController *vc = [YSCollectionViewController new];
+    vc.modalPresentationStyle = 0;
+    [self presentViewController:vc animated:YES completion:nil];
+    
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {

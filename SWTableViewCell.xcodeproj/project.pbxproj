@@ -15,6 +15,8 @@
 		810308961846579B00C378F0 /* SWUtilityButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 810308901846579B00C378F0 /* SWUtilityButtonView.m */; };
 		810308A2184D682700C378F0 /* um.png in Resources */ = {isa = PBXBuildFile; fileRef = 810308A1184D682700C378F0 /* um.png */; };
 		810308A5184D688D00C378F0 /* UMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 810308A4184D688D00C378F0 /* UMTableViewCell.m */; };
+		9A3A44EA261313800057027E /* YSCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A3A44E9261313800057027E /* YSCollectionViewCell.m */; };
+		9A3A44F226131A030057027E /* YSCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A3A44F126131A030057027E /* YSCollectionViewController.m */; };
 		AF28B0F117F77DA300A77ABB /* clock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF28B0F017F77DA300A77ABB /* clock@2x.png */; };
 		AF28B0F317F77DA600A77ABB /* cross@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF28B0F217F77DA600A77ABB /* cross@2x.png */; };
 		AF28B0F517F77DB000A77ABB /* check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF28B0F417F77DB000A77ABB /* check@2x.png */; };
@@ -53,6 +55,11 @@
 		810308A3184D688D00C378F0 /* UMTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMTableViewCell.h; sourceTree = "<group>"; };
 		810308A4184D688D00C378F0 /* UMTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMTableViewCell.m; sourceTree = "<group>"; };
 		92B6FCB0D9F5F5976482C755 /* libPods-SWTableViewCellTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SWTableViewCellTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A3A44E82613137F0057027E /* YSCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YSCollectionViewCell.h; sourceTree = "<group>"; };
+		9A3A44E9261313800057027E /* YSCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YSCollectionViewCell.m; sourceTree = "<group>"; };
+		9A3A44EE261314430057027E /* SWHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWHeader.h; sourceTree = "<group>"; };
+		9A3A44F026131A030057027E /* YSCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YSCollectionViewController.h; sourceTree = "<group>"; };
+		9A3A44F126131A030057027E /* YSCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YSCollectionViewController.m; sourceTree = "<group>"; };
 		9FE3F38C26B3255DC30E3E77 /* Pods-SWTableViewCell.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SWTableViewCell.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SWTableViewCell/Pods-SWTableViewCell.debug.xcconfig"; sourceTree = "<group>"; };
 		AF28B0F017F77DA300A77ABB /* clock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clock@2x.png"; sourceTree = "<group>"; };
 		AF28B0F217F77DA600A77ABB /* cross@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cross@2x.png"; sourceTree = "<group>"; };
@@ -117,10 +124,13 @@
 				8103088A1846579B00C378F0 /* SWLongPressGestureRecognizer.m */,
 				8103088B1846579B00C378F0 /* SWTableViewCell.h */,
 				8103088C1846579B00C378F0 /* SWTableViewCell.m */,
+				9A3A44E82613137F0057027E /* YSCollectionViewCell.h */,
+				9A3A44E9261313800057027E /* YSCollectionViewCell.m */,
 				8103088D1846579B00C378F0 /* SWUtilityButtonTapGestureRecognizer.h */,
 				8103088E1846579B00C378F0 /* SWUtilityButtonTapGestureRecognizer.m */,
 				8103088F1846579B00C378F0 /* SWUtilityButtonView.h */,
 				810308901846579B00C378F0 /* SWUtilityButtonView.m */,
+				9A3A44EE261314430057027E /* SWHeader.h */,
 			);
 			path = PodFiles;
 			sourceTree = "<group>";
@@ -166,6 +176,8 @@
 				AF34B78017DEE2B700BD9082 /* MainStoryboard.storyboard */,
 				AF34B78317DEE2B800BD9082 /* ViewController.h */,
 				AF34B78417DEE2B800BD9082 /* ViewController.m */,
+				9A3A44F026131A030057027E /* YSCollectionViewController.h */,
+				9A3A44F126131A030057027E /* YSCollectionViewController.m */,
 				AF34B76F17DEE2B300BD9082 /* Supporting Files */,
 				810308A3184D688D00C378F0 /* UMTableViewCell.h */,
 				810308A4184D688D00C378F0 /* UMTableViewCell.m */,
@@ -298,9 +310,11 @@
 			files = (
 				AF34B77517DEE2B400BD9082 /* main.m in Sources */,
 				AF34B77917DEE2B400BD9082 /* AppDelegate.m in Sources */,
+				9A3A44F226131A030057027E /* YSCollectionViewController.m in Sources */,
 				810308921846579B00C378F0 /* SWCellScrollView.m in Sources */,
 				810308911846579B00C378F0 /* NSMutableArray+SWUtilityButtons.m in Sources */,
 				810308961846579B00C378F0 /* SWUtilityButtonView.m in Sources */,
+				9A3A44EA261313800057027E /* YSCollectionViewCell.m in Sources */,
 				810308A5184D688D00C378F0 /* UMTableViewCell.m in Sources */,
 				810308941846579B00C378F0 /* SWTableViewCell.m in Sources */,
 				AF34B78517DEE2B800BD9082 /* ViewController.m in Sources */,

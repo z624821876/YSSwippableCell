@@ -8,19 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <UIKit/UIGestureRecognizerSubclass.h>
+#import "SWHeader.h"
 #import "SWCellScrollView.h"
 #import "SWLongPressGestureRecognizer.h"
 #import "SWUtilityButtonTapGestureRecognizer.h"
 #import "NSMutableArray+SWUtilityButtons.h"
 
 @class SWTableViewCell;
-
-typedef NS_ENUM(NSInteger, SWCellState)
-{
-    kCellStateCenter,
-    kCellStateLeft,
-    kCellStateRight,
-};
 
 @protocol SWTableViewCellDelegate <NSObject>
 

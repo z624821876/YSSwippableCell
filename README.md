@@ -1,3 +1,5 @@
+SWTableViewCell适配iOS 14， 增加UICollectionViewCell的侧滑。
+
 SWTableViewCell
 ===============
 

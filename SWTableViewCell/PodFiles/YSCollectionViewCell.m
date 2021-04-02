@@ -71,6 +71,10 @@
 - (void)initializer
 {
     layoutUpdating = NO;
+    
+    self.ysContentView = [[UIView alloc] init];
+    self.ysContentView.translatesAutoresizingMaskIntoConstraints = NO;
+
     // Set up scroll view that will host our cell content
     self.cellScrollView = [[SWCellScrollView alloc] init];
     self.cellScrollView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -79,6 +83,7 @@
     self.cellScrollView.scrollsToTop = NO;
     self.cellScrollView.scrollEnabled = YES;
     self.cellScrollView.decelerationRate = UIScrollViewDecelerationRateFast;
+    [self.ysContentView addSubview:self.cellScrollView];
     
     _contentCellView = [[UIView alloc] init];
     [self.cellScrollView addSubview:_contentCellView];
@@ -90,7 +95,8 @@
     UIView *contentViewParent = self;
     UIView *clipViewParent = self.cellScrollView;
     NSArray *cellSubviews = [contentViewParent subviews];
-    [self insertSubview:self.cellScrollView atIndex:0];
+//    [self insertSubview:self.cellScrollView atIndex:0];
+    [self insertSubview:self.ysContentView atIndex:0];
     for (UIView *subview in cellSubviews)
     {
         [_contentCellView addSubview:subview];
@@ -98,10 +104,17 @@
     
     // Set scroll view to perpetually have same frame as self. Specifying relative to superview doesn't work, since the latter UITableViewCellScrollView has different behaviour.
     [self addConstraints:@[
-                           [NSLayoutConstraint constraintWithItem:self.cellScrollView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:0.0],
-                           [NSLayoutConstraint constraintWithItem:self.cellScrollView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0],
-                           [NSLayoutConstraint constraintWithItem:self.cellScrollView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0.0],
-                           [NSLayoutConstraint constraintWithItem:self.cellScrollView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight multiplier:1.0 constant:0.0],
+                           [NSLayoutConstraint constraintWithItem:self.ysContentView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:0.0],
+                           [NSLayoutConstraint constraintWithItem:self.ysContentView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0],
+                           [NSLayoutConstraint constraintWithItem:self.ysContentView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0.0],
+                           [NSLayoutConstraint constraintWithItem:self.ysContentView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight multiplier:1.0 constant:0.0],
+                           ]];
+
+    [self addConstraints:@[
+                           [NSLayoutConstraint constraintWithItem:self.cellScrollView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.ysContentView attribute:NSLayoutAttributeTop multiplier:1.0 constant:0.0],
+                           [NSLayoutConstraint constraintWithItem:self.cellScrollView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.ysContentView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0],
+                           [NSLayoutConstraint constraintWithItem:self.cellScrollView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.ysContentView attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0.0],
+                           [NSLayoutConstraint constraintWithItem:self.cellScrollView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.ysContentView attribute:NSLayoutAttributeRight multiplier:1.0 constant:0.0],
                            ]];
     
     self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollViewTapped:)];

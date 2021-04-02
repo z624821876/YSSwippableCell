@@ -36,6 +36,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSArray *leftUtilityButtons;
 @property (nonatomic, copy) NSArray *rightUtilityButtons;
 
+@property (nonatomic, strong) UIView    *ysContentView;
+
 @property (nonatomic, weak) id <SWCollectionViewCellDelegate> delegate;
 
 - (void)setRightUtilityButtons:(NSArray *)rightUtilityButtons WithButtonWidth:(CGFloat) width;
